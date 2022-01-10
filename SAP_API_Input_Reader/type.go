@@ -116,7 +116,6 @@ type SDC struct {
 			SchoolZip            string      `json:"SchoolZip"`
 			Degree               string      `json:"Degree"`
 			SchoolAddress        string      `json:"SchoolAddress"`
-			CandidateID          string      `json:"CandidateID"`
 			StartDate            string      `json:"StartDate"`
 		} `json:"Education"`
 		Certificates struct {
@@ -132,7 +131,6 @@ type SDC struct {
 			BgOrderPos           string `json:"BgOrderPos"`
 			LicenseCountry       string `json:"LicenseCountry"`
 			LicenseNumber        string `json:"LicenseNumber"`
-			CandidateID          string `json:"CandidateID"`
 			StartDate            string `json:"StartDate"`
 		} `json:"Certificates"`
 		OutsideWorkExperience struct {
@@ -151,10 +149,165 @@ type SDC struct {
 			EmployerCity         string `json:"EmployerCity"`
 			EmployerEmail        string `json:"EmployerEmail"`
 			BusinessType         string `json:"BusinessType"`
-			CandidateID          string `json:"CandidateID"`
 			EmployerContact      string `json:"EmployerContact"`
 			StartDate            string `json:"StartDate"`
 		} `json:"OutsideWorkExperience"`
+		JobsApplied struct {
+			ApplicationID                   string      `json:"ApplicationID"`
+			PosTitle                        string      `json:"PosTitle"`
+			Yesanswer                       string      `json:"Yesanswer"`
+			JobCode                         string      `json:"JobCode"`
+			CandJust                        string      `json:"CandJust"`
+			WotcStatus                      string      `json:"WotcStatus"`
+			Ssn                             string      `json:"Ssn"`
+			InstrEEOlable                   string      `json:"InstrEEOlable"`
+			UsersSysID                      string      `json:"UsersSysID"`
+			ConvictionDetails               string      `json:"ConvictionDetails"`
+			Zip                             string      `json:"Zip"`
+			PsychTestDte                    string      `json:"PsychTestDte"`
+			FormerEmployee                  bool        `json:"FormerEmployee"`
+			PhoneScreenDate                 string      `json:"PhoneScreenDate"`
+			Jobofferdate                    string      `json:"Jobofferdate"`
+			CustRefCheckTitle1              string      `json:"CustRefCheckTitle1"`
+			ExtTitle                        string      `json:"ExtTitle"`
+			StatusComments                  string      `json:"StatusComments"`
+			CustRefCheckLastName            string      `json:"CustRefCheckLastName"`
+			InstrAppAdvice                  string      `json:"InstrAppAdvice"`
+			Screendate                      string      `json:"Screendate"`
+			StartDate                       string      `json:"StartDate"`
+			Status                          string      `json:"Status"`
+			LastName                        string      `json:"LastName"`
+			InstrAppAdditionalInfo          string      `json:"InstrAppAdditionalInfo"`
+			Gender                          string      `json:"Gender"`
+			City                            string      `json:"City"`
+			SourceLabel                     string      `json:"SourceLabel"`
+			ProfileUpdated                  string      `json:"ProfileUpdated"`
+			Criminalconvictionlabel         string      `json:"Criminalconvictionlabel"`
+			VisaNum                         string      `json:"VisaNum"`
+			DuplicateProfile                string      `json:"DuplicateProfile"`
+			JobRateOfPay                    string      `json:"JobRateOfPay"`
+			PsychTestTme                    string      `json:"PsychTestTme"`
+			CountryCode                     string      `json:"CountryCode"`
+			AverageRating                   string      `json:"AverageRating"`
+			InductionAdd                    string      `json:"InductionAdd"`
+			Haveyoubeenconvicted            string      `json:"Haveyoubeenconvicted"`
+			JobReqID                        string      `json:"JobReqID"`
+			Address                         string      `json:"Address"`
+			DateAvail                       string      `json:"DateAvail"`
+			InstrCandAppDetails             string      `json:"InstrCandAppDetails"`
+			NonApplicantStatus              string      `json:"NonApplicantStatus"`
+			ResumeUploadDate                string      `json:"ResumeUploadDate"`
+			DateOfBirth                     string      `json:"DateOfBirth"`
+			MedLoc                          string      `json:"MedLoc"`
+			AppStatusSetItemID              string      `json:"AppStatusSetItemID"`
+			CandConversionProcessed         string      `json:"CandConversionProcessed"`
+			Pleaseselect                    string      `json:"Pleaseselect"`
+			StateOther                      string      `json:"StateOther"`
+			ReferenceComments               string      `json:"ReferenceComments"`
+			AnonymizedFlag                  string      `json:"AnonymizedFlag"`
+			ReferredBy                      string      `json:"ReferredBy"`
+			CellPhone                       string      `json:"CellPhone"`
+			ApplicationTemplateID           string      `json:"ApplicationTemplateID"`
+			Country                         string      `json:"Country"`
+			LastModifiedDateTime            string      `json:"LastModifiedDateTime"`
+			Confnumber                      string      `json:"Confnumber"`
+			Rating                          string      `json:"Rating"`
+			WotcScreeningURL                string      `json:"WotcScreeningURL"`
+			Source                          string      `json:"Source"`
+			InstrAdditionalDocuments        string      `json:"InstrAdditionalDocuments"`
+			AgencyInfo                      string      `json:"AgencyInfo"`
+			Reference                       string      `json:"Reference"`
+			CustRefCheckPhone1              string      `json:"CustRefCheckPhone1"`
+			KnownAs                         string      `json:"KnownAs"`
+			MedDate                         string      `json:"MedDate"`
+			InstrubkgrndChkAttachment       string      `json:"InstrubkgrndChkAttachment"`
+			InstrAppReturn                  string      `json:"InstrAppReturn"`
+			CustRefCheckFirstName           string      `json:"CustRefCheckFirstName"`
+			Reasonableaccomodation          string      `json:"Reasonableaccomodation"`
+			TimeToHire                      string      `json:"TimeToHire"`
+			WotcID                          string      `json:"WotcID"`
+			Initials                        string      `json:"Initials"`
+			JobStartDate                    string      `json:"JobStartDate"`
+			HomePhone                       string      `json:"HomePhone"`
+			OwnershpDate                    string      `json:"OwnershpDate"`
+			MedTime                         string      `json:"MedTime"`
+			FirstName                       string      `json:"FirstName"`
+			InstrCandApproval               string      `json:"InstrCandApproval"`
+			InstrEEOinstructions            string      `json:"InstrEEOinstructions"`
+			CurrentTitle                    string      `json:"CurrentTitle"`
+			LastModifiedByProxy             string      `json:"LastModifiedByProxy"`
+			InstrCandScreen                 string      `json:"InstrCandScreen"`
+			Whyask                          string      `json:"Whyask"`
+			AnonymizedDate                  string      `json:"AnonymizedDate"`
+			WotcFormsURL                    string      `json:"WotcFormsURL"`
+			CandidateID                     string      `json:"CandidateID"`
+			DataSource                      string      `json:"DataSource"`
+			CandTypeWhenHired               string      `json:"CandTypeWhenHired"`
+			Crimincalconvictioninstructions string      `json:"Crimincalconvictioninstructions"`
+			HiredOn                         string      `json:"HiredOn"`
+			InstrCandFields                 string      `json:"InstrCandFields"`
+			PhoneScreenDetails              string      `json:"PhoneScreenDetails"`
+			InstrCandPersInfo               string      `json:"InstrCandPersInfo"`
+			BaseSalary                      string      `json:"BaseSalary"`
+			Title                           string      `json:"Title"`
+			VoluntaryselfID                 string      `json:"VoluntaryselfID"`
+			CustRefCheckOrg1                string      `json:"CustRefCheckOrg1"`
+			Owner                           string      `json:"Owner"`
+			HireDate                        string      `json:"HireDate"`
+			Address2                        string      `json:"Address2"`
+			ContactEmail                    string      `json:"ContactEmail"`
+			JobAppGUID                      string      `json:"JobAppGUID"`
+			LastModifiedBy                  string      `json:"LastModifiedBy"`
+			ExportedOn                      string      `json:"ExportedOn"`
+			InstrCandAssess                 string      `json:"InstrCandAssess"`
+			CurrentLocation                 string      `json:"CurrentLocation"`
+			InductionDate                   string      `json:"InductionDate"`
+			InstrWotc                       string      `json:"InstrWotc"`
+			MiddleName                      string      `json:"MiddleName"`
+			AppLocale                       string      `json:"AppLocale"`
+			SnapShotDate                    string      `json:"SnapShotDate"`
+		} `json:"JobsApplied"`
+		Resume struct {
+			AttachmentID           string      `json:"AttachmentID"`
+			Country                string      `json:"Country"`
+			FileName               string      `json:"FileName"`
+			LastModifiedDateTime   string      `json:"LastModifiedDateTime"`
+			OwnerIDType            string      `json:"OwnerIDType"`
+			DocumentType           string      `json:"DocumentType"`
+			Deletable              bool        `json:"Deletable"`
+			Description            string      `json:"Description"`
+			Language               string      `json:"Language"`
+			MimeType               string      `json:"MimeType"`
+			ModuleCategory         string      `json:"ModuleCategory"`
+			OwnerID                string      `json:"OwnerID"`
+			Deprecable             bool        `json:"Deprecable"`
+			PiiFlag                int         `json:"PiiFlag"`
+			FileExtension          string      `json:"FileExtension"`
+			DocumentEntityID       string      `json:"DocumentEntityID"`
+			Module                 string      `json:"Module"`
+			DocumentCategory       string      `json:"DocumentCategory"`
+			ExternalID             string      `json:"ExternalID"`
+			UserID                 string      `json:"UserID"`
+			Searchable             bool        `json:"Searchable"`
+			DocumentEntityType     string      `json:"DocumentEntityType"`
+			CreatedDate            string      `json:"CreatedDate"`
+			Viewable               bool        `json:"Viewable"`
+			FileSize               int         `json:"FileSize"`
+			SoftDelete             bool        `json:"SoftDelete"`
+			LastAccessed           string      `json:"LastAccessed"`
+			FileContent            string      `json:"FileContent"`
+			ImageConvertInProgress bool        `json:"ImageConvertInProgress"`
+		} `json:"Resume"`
+		State struct {
+			ID              string      `json:"ID"`
+			MinValue        string      `json:"MinValue"`
+			ExternalCode    string      `json:"ExternalCode"`
+			MaxValue        string      `json:"MaxValue"`
+			OptionValue     string      `json:"OptionValue"`
+			SortOrder       int         `json:"SortOrder"`
+			MdfExternalCode string      `json:"MdfExternalCode"`
+			Status          string      `json:"Status"`
+		} `json:"State"`
 	} `json:"Candidate"`
 	APISchema   string   `json:"api_schema"`
 	Accepter    []string `json:"accepter"`

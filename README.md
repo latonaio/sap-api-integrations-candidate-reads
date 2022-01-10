@@ -35,7 +35,7 @@ sap-api-integrations-candidate-reads には、次の API をコールするた�
 * OutsideWorkExperience（候補者 - 職歴 ※To）
 * JobsApplied（候補者 - 応募職 ※To）
 * Resume（候補者 - レジュメ ※To）
-* State（候補者 - 状態 ※To）
+* State（候補者 - 状況 ※To）
 
 ## API への 値入力条件 の 初期値
 sap-api-integrations-candidate-readsにおいて、API への値入力条件の初期値は、入力ファイルレイアウトの種別毎に、次の通りとなっています。  

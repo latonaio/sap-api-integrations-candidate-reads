@@ -33,7 +33,7 @@ sap-api-integrations-candidate-reads には、次の API をコールするた�
 * Education（候補者 - 学歴 ※To）
 * Certificates（候補者 - 資格 ※To）
 * OutsideWorkExperience（候補者 - 職歴 ※To）
-* JobsApplied（候補者 - 応募職 ※To）
+* JobsApplied（候補者 - 応募求人 ※To）
 * Resume（候補者 - レジュメ ※To）
 * State（候補者 - 状況 ※To）
 

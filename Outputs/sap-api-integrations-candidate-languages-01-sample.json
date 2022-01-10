@@ -1,0 +1,18 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-candidate-reads/SAP_API_Caller/caller.go#L93",
+	"function": "sap-api-integrations-candidate-reads/SAP_API_Caller.(*SAPAPICaller).Languages",
+	"level": "INFO",
+	"message": [
+		{
+			"BackgroundElementID": "627",
+			"LastModifiedDateTime": "/Date(1446009993000+0000)/",
+			"WritingProf": "8407",
+			"Language": "10223",
+			"ReadingProf": "8407",
+			"BgOrderPos": "1",
+			"CandidateID": "1283",
+			"SpeakingProf": "8407"
+		}
+	],
+	"time": "2022-01-10T13:23:12.110321+09:00"
+}

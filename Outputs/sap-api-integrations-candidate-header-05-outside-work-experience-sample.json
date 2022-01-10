@@ -1,0 +1,28 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-candidate-reads/SAP_API_Caller/caller.go#L101",
+	"function": "sap-api-integrations-candidate-reads/SAP_API_Caller.(*SAPAPICaller).Header",
+	"level": "INFO",
+	"message": [
+		{
+			"BackgroundElementID": "628",
+			"EmployerAddress": "",
+			"LastModifiedDateTime": "/Date(1446009993000+0000)/",
+			"EndDate": "",
+			"EmployerState": "",
+			"StartTitle": "ディレクター",
+			"BgOrderPos": "1",
+			"Employer": "EC アドバイザリー",
+			"EmployerPhone": "",
+			"PresentEmployer": "9634",
+			"EmployerCountry": "",
+			"EmployerZip": "",
+			"EmployerCity": "",
+			"EmployerEmail": "",
+			"BusinessType": "",
+			"CandidateID": "1283",
+			"EmployerContact": "",
+			"StartDate": "/Date(954547200000)/"
+		}
+	],
+	"time": "2022-01-10T14:43:12.048813+09:00"
+}

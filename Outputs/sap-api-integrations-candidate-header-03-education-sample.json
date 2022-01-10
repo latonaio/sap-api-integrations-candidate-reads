@@ -1,0 +1,28 @@
+{
+	"cursor": "/Users/latona2/bitbucket/sap-api-integrations-candidate-reads/SAP_API_Caller/caller.go#L87",
+	"function": "sap-api-integrations-candidate-reads/SAP_API_Caller.(*SAPAPICaller).Header",
+	"level": "INFO",
+	"message": [
+		{
+			"BackgroundElementID": "626",
+			"SchoolCity": "",
+			"DegreeDate": "",
+			"LastModifiedDateTime": "/Date(1446009993000+0000)/",
+			"SchoolState": "",
+			"EndDate": "/Date(954460800000)/",
+			"SchoolCountry": "",
+			"SchoolType": "",
+			"SchoolPhone": "",
+			"Major": "11911",
+			"PresentStudent": 30442,
+			"School": "大阪大学",
+			"BgOrderPos": "1",
+			"SchoolZip": "",
+			"Degree": "10709",
+			"SchoolAddress": "",
+			"CandidateID": "1283",
+			"StartDate": "/Date(828316800000)/"
+		}
+	],
+	"time": "2022-01-10T14:43:10.802606+09:00"
+}

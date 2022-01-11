@@ -43,6 +43,8 @@ sap-api-integrations-candidate-readsにおいて、API への値入力条件の�
 ### SDC レイアウト
 
 * inoutSDC.Candidate.CandidateID（候補者ID）
+* inoutSDC.Candidate.FirstName（ファーストネーム）
+* inoutSDC.Candidate.LastName（ラストネーム）
 
 ## SAP API Bussiness Hub の API の選択的コール
 
@@ -78,7 +80,7 @@ accepter における データ種別 の指定に基づいて SAP_API_Caller �
 caller.go の func() 毎 の 以下の箇所が、指定された API をコールするソースコードです。  
 
 ```
-func (c *SAPAPICaller) AsyncGetCandidate(candidateID string, accepter []string) {
+func (c *SAPAPICaller) AsyncGetCandidate(candidateID, firstName, lastName string, accepter []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(len(accepter))
 	for _, fn := range accepter {
@@ -106,6 +108,11 @@ func (c *SAPAPICaller) AsyncGetCandidate(candidateID string, accepter []string) 
 		case "OutsideWorkExperience":
 			func() {
 				c.OutsideWorkExperience(candidateID)
+				wg.Done()
+			}()
+		case "CandidateByName":
+			func() {
+				c.CandidateByName(firstName, lastName)
 				wg.Done()
 			}()
 		default:

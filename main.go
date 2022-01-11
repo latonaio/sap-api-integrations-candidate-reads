@@ -10,7 +10,7 @@ import (
 func main() {
 	l := logger.NewLogger()
 	fr := sap_api_input_reader.NewFileReader()
-	inoutSDC := fr.ReadSDC("./Inputs/SDC_Candidate_Header_sample.json")
+	inoutSDC := fr.ReadSDC("./Inputs/SDC_Candidate_Candidate_By_Name_sample.json")
 	caller := sap_api_caller.NewSAPAPICaller(
 		"https://sandbox.api.sap.com/successfactors/", l,
 	)
@@ -19,11 +19,14 @@ func main() {
 	if len(accepter) == 0 || accepter[0] == "All" {
 		accepter = []string{
 			"Header", "Languages", "Education", "Certificates", "OutsideWorkExperience",
+			"CandidateByName",
 		}
 	}
 
 	caller.AsyncGetCandidate(
 		inoutSDC.Candidate.CandidateID,
+		inoutSDC.Candidate.FirstName,
+		inoutSDC.Candidate.LastName,
 		accepter,
 	)
 }

@@ -26,7 +26,7 @@ func NewSAPAPICaller(baseUrl string, l *logger.Logger) *SAPAPICaller {
 	}
 }
 
-func (c *SAPAPICaller) AsyncGetCandidate(candidateID string, accepter []string) {
+func (c *SAPAPICaller) AsyncGetCandidate(candidateID, firstName, lastName string, accepter []string) {
 	wg := &sync.WaitGroup{}
 	wg.Add(len(accepter))
 	for _, fn := range accepter {
@@ -54,6 +54,11 @@ func (c *SAPAPICaller) AsyncGetCandidate(candidateID string, accepter []string) 
 		case "OutsideWorkExperience":
 			func() {
 				c.OutsideWorkExperience(candidateID)
+				wg.Done()
+			}()
+		case "CandidateByName":
+			func() {
+				c.CandidateByName(firstName, lastName)
 				wg.Done()
 			}()
 		default:
@@ -389,6 +394,36 @@ func (c *SAPAPICaller) callCandidateSrvAPIRequirementOutsideWorkExperience(api, 
 	return data, nil
 }
 
+func (c *SAPAPICaller) CandidateByName(firstName, lastName string) {
+	headerData, err := c.callCandidateSrvAPIRequirementCandidateByName("Candidate", firstName, lastName)
+	if err != nil {
+		c.log.Error(err)
+		return
+	}
+	c.log.Info(headerData)
+}
+
+func (c *SAPAPICaller) callCandidateSrvAPIRequirementCandidateByName(api, firstName, lastName string) ([]sap_api_output_formatter.Header, error) {
+	url := strings.Join([]string{c.baseURL, "odata/v2", api}, "/")
+	req, _ := http.NewRequest("GET", url, nil)
+
+	c.setHeaderAPIKeyAccept(req)
+	c.getQueryWithCandidateByName(req, firstName, lastName)
+
+	resp, err := new(http.Client).Do(req)
+	if err != nil {
+		return nil, xerrors.Errorf("API request error: %w", err)
+	}
+	defer resp.Body.Close()
+
+	byteArray, _ := ioutil.ReadAll(resp.Body)
+	data, err := sap_api_output_formatter.ConvertToHeader(byteArray, c.log)
+	if err != nil {
+		return nil, xerrors.Errorf("convert error: %w", err)
+	}
+	return data, nil
+}
+
 func (c *SAPAPICaller) setHeaderAPIKeyAccept(req *http.Request) {
 	req.Header.Set("APIKey", c.apiKey)
 	req.Header.Set("Accept", "application/json")
@@ -421,5 +456,11 @@ func (c *SAPAPICaller) getQueryWithCertificates(req *http.Request, candidateID s
 func (c *SAPAPICaller) getQueryWithOutsideWorkExperience(req *http.Request, candidateID string) {
 	params := req.URL.Query()
 	params.Add("$filter", fmt.Sprintf("candidateId eq '%s'", candidateID))
+	req.URL.RawQuery = params.Encode()
+}
+
+func (c *SAPAPICaller) getQueryWithCandidateByName(req *http.Request, firstName, lastName string) {
+	params := req.URL.Query()
+	params.Add("$filter", fmt.Sprintf("firstName eq '%s' and lastName eq '%s'", firstName, lastName))
 	req.URL.RawQuery = params.Encode()
 }

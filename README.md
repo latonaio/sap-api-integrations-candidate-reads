@@ -1,7 +1,7 @@
 # sap-api-integrations-candidate-reads
 sap-api-integrations-candidate-reads は、外部システム(特にエッジコンピューティング環境)をSAPと統合することを目的に、SAP API で 候補者 データを取得するマイクロサービスです。    
 sap-api-integrations-candidate-reads には、サンプルのAPI Json フォーマットが含まれています。   
-sap-api-integrations-candidate-reads は、オンプレミス版である（＝クラウド版ではない）SAP SuccessFactors API の利用を前提としています。クラウド版APIを利用する場合は、ご注意ください。   
+sap-api-integrations-candidate-reads は、SAP SuccessFactors API の利用を前提としています。  
 https://api.sap.com/api/RCMCandidate/overview   
 
 ## 動作環境  
